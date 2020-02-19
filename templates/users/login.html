@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+
+{% block head_content %}
+    <title>MinInstagram Sign in</title>
+{% endblock %}
+
+{% block container %}
+
+    <form method="POST" action="{% url 'login' %}">
+
+    <input type="text" placeholder="Username" name="username" />
+    <input type="password" placeholder="Password" name="password" />
+
+    <button type="submit">Sign in</button>
+
+    </form>
+
+{% endblock %}
