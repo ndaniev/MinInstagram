@@ -2,10 +2,9 @@
 
 # Django
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 # Utilities
 from datetime import datetime
-
 
 posts = [
     {
@@ -38,7 +37,7 @@ posts = [
 ]
 
 
+@login_required
 def list_posts(request):
     """List existing posts."""
     return render(request, 'posts/feed.html', {'posts': posts})
-
